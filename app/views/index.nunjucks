@@ -1,0 +1,21 @@
+{% extends 'layout.nunjucks' %}
+
+{% block content %}
+  <h1>{{ title }}</h1>
+  
+  <form method="get">
+    <input type="search" name="query" value="{{query}}" placeholder="Enter your search tearms">
+    <button>Search!</button>
+  </form>
+
+  <div class="result">
+    Searching for: 
+    {% for word in output %}
+      <span class="{{word.class}}">{{word.keyword}}</span>
+    {% endfor %}
+  </div>
+
+  <!-- <h2>Matching results:</h2> -->
+  <!-- This could be reserved to show individual results that match the query -->
+  
+{% endblock %}
